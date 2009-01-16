@@ -1,0 +1,20 @@
+.x-tab-panel-menu {
+  width: 16px;
+  float: right;
+  position: absolute;
+  background: url(../images/tabmenu.gif) no-repeat 0 0;
+  right: 0;
+  top: 0;
+}
+
+.x-tab-panel-menu-over {
+  background-position: -18px 0;
+}
+
+.user  { background-image: url(../images/icons/user.png)  !important;}
+.film  { background-image: url(../images/icons/film.png)  !important;}
+.home  { background-image: url(../images/icons/home.png)  !important;}
+.page  { background-image: url(../images/icons/page.png)  !important;}
+.image { background-image: url(../images/icons/image.png) !important;}
+.many  { background-image: url(../images/icons/many.png)  !important;}
+.find  { background-image: url(../images/icons/find.png)  !important;}
