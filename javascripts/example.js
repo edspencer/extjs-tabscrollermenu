@@ -17,7 +17,7 @@ Ext.onReady(function() {
   var tp2Items = [];
   for (var i=1; i < 24; i++) {
     tp2Items.push({
-      title:   String.format("Panel {0} Title ", i),
+      title:   String.format("Longer Panel {0} Title ", i),
       html:    String.format("Panel {0} Content", i),
       iconCls: iconClasses[Math.floor(Math.random() * iconClasses.length)]
     });

@@ -16,5 +16,14 @@
 .home  { background-image: url(../images/icons/home.png)  !important;}
 .page  { background-image: url(../images/icons/page.png)  !important;}
 .image { background-image: url(../images/icons/image.png) !important;}
-.many  { background-image: url(../images/icons/many.png)  !important;}
+.many  { background-image: url(../images/icons/pages.png) !important;}
 .find  { background-image: url(../images/icons/find.png)  !important;}
+
+.x-tab-filter {
+  padding: 1px;
+}
+
+.x-tab-filter-empty {
+  color: #aaa;
+  font-style: italic;
+}

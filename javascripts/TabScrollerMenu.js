@@ -56,6 +56,10 @@ Ext.ux.TabScrollerMenu = Ext.extend(Ext.menu.Menu, {
       this.tabMenuTrigger.setHeight(this.stripWrap.dom.offsetHeight);
       this.tabMenuTrigger.on('click', function() { menuRef.show(this.tabMenuTrigger); }, this);
       this.tabMenuTrigger.addClassOnOver('x-tab-panel-menu-over');
+      
+      //update the menu when TabPanel items change
+      this.on('add',    menuRef.createMenuItems, menuRef);
+      this.on('remove', menuRef.createMenuItems, menuRef);
     });
   },
   
@@ -124,23 +128,19 @@ Ext.ux.TabScrollerMenu = Ext.extend(Ext.menu.Menu, {
    */
   createFilterMenu: function() {
     if (this.hasFilter) {
-      this.filterMenu = this.addMenuItem({
-        text:    'Search',
-        iconCls: 'find',
-        menu: [
-          new Ext.ux.menu.TextFieldItem({
-            name: 'filter',
-            listeners: {
-              keyup: { 
-                scope: this,
-                fn: function(e, input) {
-                  this.filterItems(input.value);
-                }
+      this.filterMenu = this.addItem(
+        new Ext.ux.menu.TextFilterItem({
+          name: 'filter',
+          listeners: {
+            keyup: { 
+              scope: this,
+              fn: function(e, input) {
+                this.filterItems(input.value);
               }
             }
-          })
-        ]
-      });
+          }
+        })
+      );
       
       return this.filterMenu;
     }
